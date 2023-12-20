@@ -20,6 +20,7 @@
   --primary-clr-110: 103, 16%, 33%;
   --primary-clr-120: 95, 17%, 28%;
   --primary-clr-200: 100, 100%, 85%;
+  --primary-clr-210: 67, 59%, 82%;
 
   --secondary-clr-100: 118, 28%, 79%;
   --secondary-clr-110: 100, 15%, 84%;
@@ -220,9 +221,10 @@ nav input[type="checkbox"] {
   --ls-ratio: 1.3;
 
   display: flex;
-  padding: 5rem 5rem 6rem 5rem;
+  padding: 3rem 5rem 3rem 5rem;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   gap: 10vw;
   background-color: hsl(var(--primary-clr-200), .5);
 }
@@ -231,6 +233,17 @@ nav input[type="checkbox"] {
   .homepage {
     justify-content: space-around;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .homepage {
+    padding: 1rem;
+  }
+}
+
+.attractive {
+  background-color: hsl(var(--primary-clr-210));
+  padding: 3rem;
 }
 
 .attractive h1 {
@@ -243,7 +256,7 @@ nav input[type="checkbox"] {
   font-size: var(--fs-4);
   color: hsl(var(--secondary-clr-200));
   text-transform: capitalize;
-  margin-top: 10px;
+  /* margin-top: 0px; */
 }
 
 .attractive p {
@@ -252,7 +265,7 @@ nav input[type="checkbox"] {
   margin-top: 5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .attractive {
     display: flex;
     flex-direction: column;
@@ -374,11 +387,10 @@ nav input[type="checkbox"] {
 }
 
 .homepage img {
-  width: 300px;
-  aspect-ratio: 1 / 1;
+  width: 400px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 .homepage img {
     display: none;
   }
