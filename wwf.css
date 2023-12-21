@@ -72,7 +72,7 @@ body {
 ::-webkit-scrollbar {
   width: 5px;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -83,6 +83,41 @@ body {
 ::-webkit-scrollbar-track {
   background: hsl(var(--secondary-clr-100));
 }
+
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+section {
+  overflow-x: hidden;
+  padding: 1rem 0 0;
+}
+
+.section-ttl {
+  font-size: var(--fs-7);
+  font-family: "kyiv serif";
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+  color: hsl(var(--primary-clr-100), 0.8);
+  margin-bottom: 3rem;
+}
+
+.section-ttl::after {
+  content: "";
+  width: 120%;
+  height: 10px;
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(var(--primary-clr-120));
+  border-radius: 10vw;
+}
+
+/* navigation bar */
 
 nav {
   --nav-height: 3rem;
@@ -411,10 +446,227 @@ nav input[type="checkbox"] {
   }
 }
 
+/*Events*/
+
+.events-container {
+  width: 100%;
+  height: 400px !important;
+  background-color: hsl(var(--secondary-clr-100), .3);
+  color: hsl(var(--primary-clr-100), .6);
+  padding: 190px 0;
+}
+
+.events-container p {
+  margin: auto;
+  padding: 0 15px;
+  text-align: center;
+  width: fit-content;
+  font-size: var(--fs-2);
+}
+
+/*FAQ*/
+
+.faq {
+  --arrow-position: 7px;
+
+  display: grid;
+  justify-content: center;
+  margin-inline: auto;
+  overflow-x: hidden;
+  padding: 1rem 0 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .faq { 
+    padding: 1rem 0 1rem;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  margin-inline: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    justify-items: center;
+    gap: 1rem;
+    margin-inline: 1rem;
+  }
+}
+
+.question {
+  width: 23%;
+  height: 100%;
+  color: hsl(var(--primary-clr-120));
+  background-color: hsl(var(--primary-clr-210));
+  font-size: calc(var(--fs-3) * 1.3);
+  font-variation-settings: var(--fw-7);
+  text-decoration: none;
+  padding: 0.9rem 30px 2rem 1.1rem;
+  position: relative;
+}
+
+@media screen and (max-width: 1100px) {
+  .question {
+    font-size: calc(var(--fs-3) * 1.2);
+    padding: 0.9rem 30px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .question[data-rank="third"] {
+    padding: 0.9rem 20px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .question {
+    font-size: var(--fs-3);
+    padding: 0.9rem 20px 1.9rem 1.1rem;
+  }
+
+  .question[data-rank="third"] {
+    padding: 0.9rem 30px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .question {
+    font-size: calc(var(--fs-3) * 0.9);
+    padding: 0.9rem 20px 1.9rem 1.1rem;
+  }
+
+  .question[data-rank="third"] {
+    padding: 0.9rem 30px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .question[data-rank="third"] {
+    padding: 0.9rem 25px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .question[data-rank="third"] {
+    padding: 0.9rem 14px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .question {
+    font-size: calc(var(--fs-3) * 0.8);
+    padding: 0.9rem 20px 1.9rem 1.1rem;
+  }
+
+  .question[data-rank="third"] {
+    padding: 0.9rem 17px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .question {
+    width: 100%;
+    font-size: calc(var(--fs-3) * 1);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .question {
+    width: 100%;
+    font-size: calc(var(--fs-3) * .85);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .question {
+    width: 100%;
+    font-size: calc(var(--fs-3) * .8);
+  }
+
+  .question[data-rank="third"] {
+    padding: 0.9rem 24px 1.9rem 1.1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .question[data-rank="third"], .question[data-rank="last"] {
+    padding: 0.9rem 10px 1.9rem 1.1rem;
+  }
+}
+
+@keyframes arrow-hover {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-14px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.question i {
+  position: absolute;
+  right: calc(var(--arrow-position) * 1.3);
+  bottom: var(--arrow-position);
+  font-size: calc(var(--fs-3) * 1.5);
+}
+
+.question:hover i {
+  animation-name: arrow-hover;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@media screen and (max-width: 1100px) {
+  .question i {
+    font-size: calc(var(--fs-3) * 1.4);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .question i {
+    font-size: calc(var(--fs-3) * 1.3);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .question i {
+    font-size: calc(var(--fs-3) * 1.1);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .question i {
+    font-size: calc(var(--fs-3) * 1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .question i {
+    font-size: calc(var(--fs-3) * 1.3);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .question i {
+    font-size: calc(var(--fs-3) * 1);
+  }
+}
+
 /*footer*/
 
 .footer {
-  --footer-border: 1px solid hsl(var(--secondary-clr-300), .5);
+  --footer-border: 1px solid hsl(var(--secondary-clr-300), 0.5);
   --items-padding: 20px;
 
   display: flex;
@@ -435,7 +687,7 @@ nav input[type="checkbox"] {
 }
 
 .foot-content::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 60%;
   bottom: 0;
@@ -493,7 +745,7 @@ nav input[type="checkbox"] {
 .about-us p {
   font-size: var(--fs-2);
   padding-right: 140px;
-  color: hsl(var(--secondary-clr-300), .6);
+  color: hsl(var(--secondary-clr-300), 0.6);
 }
 
 @media screen and (max-width: 1100px) {
@@ -537,14 +789,14 @@ nav input[type="checkbox"] {
   .email-number {
     flex-direction: column;
     text-align: center;
-    gap: .7rem;
+    gap: 0.7rem;
   }
 }
 
 .contact-us p {
   font-size: var(--fs-2);
   text-wrap: nowrap;
-  color: hsl(var(--secondary-clr-300), .5);
+  color: hsl(var(--secondary-clr-300), 0.5);
 }
 
 .contact-us a {
@@ -577,5 +829,5 @@ nav input[type="checkbox"] {
 
 .contact-us ul li a:hover i {
   transform: scale(1.3);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
