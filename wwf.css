@@ -597,6 +597,7 @@ nav input[type="checkbox"] {
   padding: 10px 10px 10px 10px;
   display: grid;
   place-content: center;
+  border: 2px solid hsl(var(--link-bg));
   border-radius: 10px;
 }
 
