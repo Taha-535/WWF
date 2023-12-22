@@ -723,11 +723,12 @@ nav input[type="checkbox"] {
 
 .info {
   background-image: url(./assets/images/info-bg.png);
-  background-size: 100%;
+  background-size: 100% 100%;
   background-position: center;
   background-color: hsl(var(--primary-clr-210));
+  background-repeat: no-repeat;
   color: hsl(var(--primary-clr-110));
-  width: 550px;
+  width: min(550px, 100vw);
   display: grid;
   place-content: center;
   aspect-ratio: 6 / 4;
@@ -751,6 +752,49 @@ nav input[type="checkbox"] {
 
 .info p {
   font-size: calc(var(--fs-4) * 1.1);
+}
+
+@media screen and (max-width: 550px) {
+  .info {
+    height: calc(100vw * .66);
+  }
+
+  .info h3 {
+    font-size: var(--fs-5);
+  }
+
+  .info p {
+    font-size: var(--fs-3);
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .info {
+    padding: 4.5rem;
+  }
+
+  .info h3 {
+    font-size: calc(var(--fs-4) * 1.4);
+  }
+
+  .info p {
+    font-size: var(--fs-2);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .info {
+    height: calc(100vw * .8);
+    padding: 3.8rem;
+  }
+
+  .info h3 {
+    font-size: calc(var(--fs-4) * 1.1);
+  }
+
+  .info p {
+    font-size: calc(var(--fs-2) * .9);
+  }
 }
 
 /*FAQ*/
