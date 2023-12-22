@@ -152,7 +152,8 @@ nav img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  transition: right var(--mobile-transition), background-color var(--mobile-transition);
+  transition: right var(--mobile-transition),
+    background-color var(--mobile-transition);
   height: var(--nav-height);
 }
 
@@ -304,7 +305,7 @@ nav input[type="checkbox"] {
 .attractive {
   background-color: hsl(var(--primary-clr-210));
   padding: 3rem;
-  transition: transform .7s;
+  transition: transform 0.7s;
 }
 
 .attractive:hover {
@@ -368,7 +369,7 @@ nav input[type="checkbox"] {
 }
 
 .call-to-action {
-  --hov-transition: .5s;
+  --hov-transition: 0.5s;
 
   display: flex;
   justify-content: space-between;
@@ -393,7 +394,7 @@ nav input[type="checkbox"] {
 .call-to-action .contact a {
   font-size: var(--fs-5);
   color: hsl(var(--primary-clr-100));
-  transition: transform var(--hov-transition)
+  transition: transform var(--hov-transition);
 }
 
 .call-to-action .contact a:hover {
@@ -484,19 +485,36 @@ nav input[type="checkbox"] {
 
 .events-container {
   display: flex;
-  justify-content: space-evenly;
+  gap: 10px;
+  flex-wrap: nowrap;
   align-items: center;
-  padding: 1.5rem 0;
-  background-color: hsl(var(--primary-clr-200), .3);
-  overflow-x: scroll;
+  padding: 1.5rem 5px;
+  height: calc(400px + 1.5rem);
+  background-color: hsl(var(--primary-clr-200), 0.3);
+  overflow-y: hidden;
+}
+
+@media screen and (min-width: 670px) {
+  .events-container {
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .events-container {
+    overflow-x: auto;
+    justify-content: none;
+    height: calc(300px + 1.5rem);
+  }
 }
 
 .event {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   height: 400px;
-  width: max(30%, 10px);
+  width: 30%;
+  min-width: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   border: 5px solid hsl(var(--primary-clr-100));
@@ -510,16 +528,39 @@ nav input[type="checkbox"] {
   transform: scale(1.05);
 }
 
+@media screen and (max-width: 670px) {
+  .event {
+    height: 300px;
+  }
+
+  .event:hover {
+    transform: scale(1);
+  }
+}
+
 #podcast {
   background-image: url(./assets/images/podcast.png);
+}
+
+@media screen and (max-width: 670px) {
+  #podcast {
+    margin-left: 10px;
+  }
 }
 
 #classe {
   background-image: url(./assets/images/class.png);
 }
 
-#podcast, #classe {
-  --act-bg: var(--primary-clr-200), .8;
+@media screen and (max-width: 670px) {
+  #classe {
+    margin-right: 10px;
+  }
+}
+
+#podcast,
+#classe {
+  --act-bg: var(--primary-clr-200), 0.8;
   --act-clr: var(--primary-clr-120);
   --link-bg: var(--primary-clr-120);
   --link-clr: var(--primary-clr-210);
@@ -528,7 +569,7 @@ nav input[type="checkbox"] {
 }
 
 #recipe {
-  --act-bg: var(--primary-clr-110), .8;
+  --act-bg: var(--primary-clr-110), 0.8;
   --act-clr: var(--primary-clr-200);
   --link-bg: var(--primary-clr-210);
   --link-clr: var(--primary-clr-100);
@@ -541,12 +582,16 @@ nav input[type="checkbox"] {
 .overlay {
   position: fixed;
   top: 0;
-  left: 0; 
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 2;
   backdrop-filter: blur(20px);
   visibility: hidden;
+}
+
+.event.clicked ~ .overlay {
+  visibility: visible;
 }
 
 .event.clicked {
@@ -560,21 +605,29 @@ nav input[type="checkbox"] {
   cursor: auto;
 }
 
-.event.clicked ~ .overlay {
-  visibility: visible;
+@media screen and (max-width: 600px) {
+  .event.clicked {
+    height: 90vh;
+  }
 }
 
 .event-info {
-  background-color: hsl(var(--act-bg)); 
+  background-color: hsl(var(--act-bg));
   color: hsl(var(--act-clr));
   padding: 5px 0 10px 15px;
   backdrop-filter: blur(5px);
 }
 
 .event.clicked .event-info {
-  padding: 15px 40px 25px 30px;
+  padding: 15px 40px 25px;
   backdrop-filter: blur(20px);
   width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .event.clicked .event-info {
+    padding: 15px 20px;
+  }
 }
 
 .event-info *:not(h3) {
@@ -598,7 +651,6 @@ nav input[type="checkbox"] {
 }
 
 .event.clicked h3 {
-  font-size: var(--fs-7);
   margin-bottom: 10px;
 }
 
@@ -612,19 +664,39 @@ nav input[type="checkbox"] {
   padding-left: 25px;
 }
 
+@media screen and (max-width: 600px) {
+  .event.clicked .event-info p {
+    font-size: var(--fs-4);
+  }
+}
+
 .event.clicked .event-info ul {
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   text-align: center;
   margin-top: 25px;
   gap: 10px;
-  font-size: calc(var(--fs-4) * 1.2); 
+  font-size: calc(var(--fs-4) * 1.2);
   list-style: none;
+}
+
+@media screen and (max-width: 670px) {
+  .event.clicked .event-info ul {
+    font-size: var(--fs-4);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .event.clicked .event-info ul {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-3);
+  }
 }
 
 .event.clicked .event-info ul li {
   background-color: hsl(var(--link-bg));
-  color: hsl(var(--link-clr)); 
+  color: hsl(var(--link-clr));
   padding: 10px 10px 10px 10px;
   display: grid;
   place-content: center;
@@ -634,8 +706,8 @@ nav input[type="checkbox"] {
 
 .event.clicked .event-info ul li:hover {
   background-color: hsl(var(--link-hov-bg));
-  color: hsl(var(--link-hov-clr)); 
-  transition: background-color .4s, color .4s;
+  color: hsl(var(--link-hov-clr));
+  transition: background-color 0.4s, color 0.4s;
 }
 
 .event.clicked .event-info ul li a {
