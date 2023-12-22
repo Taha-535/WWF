@@ -489,9 +489,9 @@ nav input[type="checkbox"] {
   flex-wrap: nowrap;
   align-items: center;
   padding: 1.5rem 5px;
-  height: calc(400px + 1.5rem);
   background-color: hsl(var(--primary-clr-200), 0.3);
   overflow-y: hidden;
+  overflow-x: auto;
 }
 
 @media screen and (min-width: 670px) {
@@ -502,8 +502,6 @@ nav input[type="checkbox"] {
 
 @media screen and (max-width: 670px) {
   .events-container {
-    overflow-x: auto;
-    justify-content: none;
     height: calc(300px + 1.5rem);
   }
 }
@@ -712,6 +710,47 @@ nav input[type="checkbox"] {
 
 .event.clicked .event-info ul li a {
   color: inherit;
+}
+
+/* Fact of the day */
+
+#info {
+  padding: 1rem 2rem;
+  display: grid;
+  place-content: center;
+  background-color: hsl(var(--primary-clr-200));
+}
+
+.info {
+  background-image: url(./assets/images/info-bg.png);
+  background-size: 100%;
+  background-position: center;
+  background-color: hsl(var(--primary-clr-210));
+  color: hsl(var(--primary-clr-110));
+  width: 550px;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 6 / 4;
+  padding: 5.5rem;
+  text-align: center; 
+  border: 5px solid white;
+  outline: 5px solid hsl(var(--primary-clr-200));
+  transition: background-size .4s;
+}
+
+.info:hover {
+  background-size: 110%;
+}
+
+.info h3 {
+  font-size: var(--fs-7);
+  text-transform: capitalize; 
+  font-variation-settings: var(--fw-7);
+  margin-bottom: 10px;
+}
+
+.info p {
+  font-size: calc(var(--fs-4) * 1.1);
 }
 
 /*FAQ*/
