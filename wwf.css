@@ -736,11 +736,11 @@ nav input[type="checkbox"] {
   text-align: center; 
   border: 5px solid white;
   outline: 5px solid hsl(var(--primary-clr-200));
-  transition: background-size .4s;
+  transition: .4s;
 }
 
 .info:hover {
-  background-size: 110%;
+  background-size: 110% 110%;
 }
 
 .info h3 {
