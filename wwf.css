@@ -19,8 +19,9 @@
   --primary-clr-100: 102, 17%, 47%;
   --primary-clr-110: 103, 16%, 33%;
   --primary-clr-120: 95, 17%, 28%;
-  --primary-clr-200: 100, 100%, 85%;
+  --primary-clr-200: 82, 47%, 64%;
   --primary-clr-210: 67, 59%, 82%;
+  --primary-clr-220: 100, 100%, 85%;
   --primary-clr-300: 0, 0%, 30%;
 
   --secondary-clr-100: 118, 28%, 79%;
@@ -151,7 +152,7 @@ nav img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  transition: right var(--mobile-transition);
+  transition: right var(--mobile-transition), background-color var(--mobile-transition);
   height: var(--nav-height);
 }
 
@@ -285,7 +286,7 @@ nav input[type="checkbox"] {
   justify-content: space-between;
   align-items: center;
   gap: 10vw;
-  background-color: hsl(var(--primary-clr-200), 0.5);
+  background-color: hsl(var(--primary-clr-220), 0.5);
 }
 
 @media screen and (min-width: 1200px) {
@@ -419,36 +420,41 @@ nav input[type="checkbox"] {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: hsl(var(--primary-clr-110));
-  padding: 2px 3px 2px 10px;
+  color: hsl(var(--secondary-clr-300));
+  background-color: hsl(var(--primary-clr-100));
+  padding: 3px 3px 2px 11px;
   border-radius: 100vh;
-  border: 1px solid black;
+  border: 1px solid white;
   cursor: pointer;
   font-size: var(--fs-2);
   text-wrap: nowrap;
   transition: var(--hov-transition);
 }
 
+.call-to-action span {
+  margin-bottom: 2px;
+}
+
 .call-to-action button i {
   font-size: var(--fs-5);
-  color: hsl(var(--primary-clr-100));
+  color: hsl(var(--secondary-clr-300));
   transition: var(--hov-transition);
 }
 
 .call-to-action button:hover {
-  background-color: hsl(var(--primary-clr-100));
-  color: hsl(var(--secondary-clr-300));
+  background-color: hsl(var(--secondary-clr-300));
+  color: hsl(var(--primary-clr-110));
 }
 
 .call-to-action button:hover i {
-  color: hsl(var(--secondary-clr-300));
+  color: hsl(var(--primary-clr-100));
   transform: rotate(-360deg);
 }
 
 @media screen and (min-width: 1024px) {
   .call-to-action button {
-    font-size: calc(var(--fs-3) * 1.25);
-    padding: 2px 3px 2px 15px;
+    font-size: calc(var(--fs-3) * 1.2);
+    padding: 3px 3px 3px 15px;
     gap: 15px;
   }
 
@@ -482,6 +488,7 @@ nav input[type="checkbox"] {
   align-items: center;
   padding: 1.5rem 0;
   background-color: hsl(var(--primary-clr-200), .3);
+  overflow-x: scroll;
 }
 
 .event {
@@ -489,7 +496,7 @@ nav input[type="checkbox"] {
   flex-direction: column;
   justify-content: end;
   height: 400px;
-  width: 30%;
+  width: max(30%, 10px);
   background-size: cover;
   background-repeat: no-repeat;
   border: 5px solid hsl(var(--primary-clr-100));
@@ -521,7 +528,7 @@ nav input[type="checkbox"] {
 }
 
 #recipe {
-  --act-bg: var(--primary-clr-100), .8;
+  --act-bg: var(--primary-clr-110), .8;
   --act-clr: var(--primary-clr-200);
   --link-bg: var(--primary-clr-210);
   --link-clr: var(--primary-clr-100);
@@ -567,6 +574,7 @@ nav input[type="checkbox"] {
 .event.clicked .event-info {
   padding: 15px 40px 25px 30px;
   backdrop-filter: blur(20px);
+  width: 100%;
 }
 
 .event-info *:not(h3) {
@@ -580,9 +588,17 @@ nav input[type="checkbox"] {
 .event-info h3 {
   font-size: var(--fs-7);
   font-variation-settings: var(--fw-8);
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+  .event-info h3 {
+    font-size: var(--fs-6);
+  }
 }
 
 .event.clicked h3 {
+  font-size: var(--fs-7);
   margin-bottom: 10px;
 }
 
