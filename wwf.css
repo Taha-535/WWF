@@ -47,6 +47,7 @@
   --fw-7: "wght" 700, "CONT" 0, "MIDL" 0;
   --fw-8: "wght" 800, "CONT" 0, "MIDL" 0;
   --fw-9: "wght" 900, "CONT" 0, "MIDL" 0;
+  
 }
 
 *,
@@ -132,7 +133,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  position: relative;
   background-color: hsl(var(--primary-clr-100));
   color: hsl(var(--secondary-clr-100));
 }
@@ -1011,6 +1011,66 @@ nav input[type="checkbox"] {
   .question i {
     font-size: calc(var(--fs-3) * 1);
   }
+}
+
+.faq-main {
+  display: flex;
+  background-color: hsl(var(--primary-clr-210));
+
+}
+
+.content-table {
+  width: 30vw;
+  background-color: hsl(var(--primary-clr-110));
+}
+
+.contents {
+  width: 70vw;
+  padding-left: 50px;
+}
+
+.contents *:not(h1) {
+  padding: 0 4rem 0 0;
+}
+
+.contents h1 {
+  font-size: calc(var(--fs-7) * 1.4);
+  font-variation-settings: var(--fw-8);
+  color: hsl(var(--primary-clr-120));
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.contents h2 {
+  font-size: var(--fs-7);
+  font-variation-settings: var(--fw-6);
+  color: hsl(var(--primary-clr-110));
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.contents h3 {
+  font-size: calc(var(--fs-6) * 1.05);
+  font-variation-settings: var(--fw-6);
+  color: hsl(var(--primary-clr-100));
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.contents h3::first-letter {
+  padding-left: 40px;
+}
+
+.contents p {
+  font-size: var(--fs-5);
+  font-variation-settings: var(--fw-4);
+  color: hsl(var(--primary-clr-120));
+  padding-left: 10px;
+  margin-bottom: 50px;
+}
+
+.contents p::first-letter {
+  padding-left: 30px;
 }
 
 /*footer*/
