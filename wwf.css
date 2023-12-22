@@ -47,7 +47,6 @@
   --fw-7: "wght" 700, "CONT" 0, "MIDL" 0;
   --fw-8: "wght" 800, "CONT" 0, "MIDL" 0;
   --fw-9: "wght" 900, "CONT" 0, "MIDL" 0;
-  
 }
 
 *,
@@ -119,6 +118,11 @@ section {
   transform: translateX(-50%);
   background-color: hsl(var(--primary-clr-120));
   border-radius: 10vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* navigation bar */
@@ -733,10 +737,10 @@ nav input[type="checkbox"] {
   place-content: center;
   aspect-ratio: 6 / 4;
   padding: 5.5rem;
-  text-align: center; 
+  text-align: center;
   border: 5px solid white;
   outline: 5px solid hsl(var(--primary-clr-200));
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .info:hover {
@@ -745,14 +749,14 @@ nav input[type="checkbox"] {
 
 .info h3 {
   font-size: var(--fs-7);
-  text-transform: capitalize; 
+  text-transform: capitalize;
   font-variation-settings: var(--fw-7);
   margin-bottom: 10px;
 }
 
 .info p {
   font-size: calc(var(--fs-4) * 1.1);
-  font-variation-settings: var(--fw-4); 
+  font-variation-settings: var(--fw-4);
 }
 
 @media screen and (min-width: 1100px) {
@@ -772,7 +776,7 @@ nav input[type="checkbox"] {
 
 @media screen and (max-width: 550px) {
   .info {
-    height: calc((100vw - 10px) * .66);
+    height: calc((100vw - 10px) * 0.66);
   }
 
   .info h3 {
@@ -800,7 +804,7 @@ nav input[type="checkbox"] {
 
 @media screen and (max-width: 360px) {
   .info {
-    height: calc((100vw - 10px) * .8);
+    height: calc((100vw - 10px) * 0.8);
     padding: 3.8rem;
   }
 
@@ -809,7 +813,7 @@ nav input[type="checkbox"] {
   }
 
   .info p {
-    font-size: calc(var(--fs-2) * .9);
+    font-size: calc(var(--fs-2) * 0.9);
   }
 }
 
@@ -1016,12 +1020,79 @@ nav input[type="checkbox"] {
 .faq-main {
   display: flex;
   background-color: hsl(var(--primary-clr-210));
-
+  position: relative;
 }
 
 .content-table {
-  width: 30vw;
+  width: 25vw;
   background-color: hsl(var(--primary-clr-110));
+  position: sticky;
+  top: 0;
+  padding: 20px 20px 0 5px;
+  text-transform: capitalize;
+}
+
+.content-table p {
+  color: hsl(var(--primary-clr-210));
+  font-size: calc(var(--fs-4) * 1.2);
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'kyiv serif';
+  letter-spacing: 2px;
+  line-height: 28px;
+}
+
+.content-table p::first-letter {
+  padding-left: 10px;
+}
+
+.content-table hr {
+  border-color: hsl(var(--primary-clr-210));
+  margin-top: 30px;
+}
+
+.content-table dl {
+  padding-left: 10px;
+  color: hsl(var(--primary-clr-210));
+}
+
+.content-table dl dt {
+  font-size: var(--fs-4);
+  margin-bottom: 20px;
+  margin-top: 35px;
+  background-color: hsl(var(--primary-clr-210));
+  color: hsl(var(--primary-clr-120));
+  padding: .8rem 0 .9rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.content-table dl dt:hover {
+  text-decoration: underline 1px solid hsl(var(--primary-clr-120))  ;
+}
+
+.content-table dl ul {
+  list-style-type: disc;
+  color: inherit;
+}
+
+.content-table dl dd {
+  padding-left: 10px; 
+  padding-right: 20px;
+  margin-bottom: 10px;
+  color: hsl(var(--primary-clr-210), .5);
+  text-decoration: underline dashed 2px hsl(var(--primary-clr-210), .8);
+  line-height: 27px;
+}
+
+.content-table dl dd::first-letter {
+  padding-left: 20px;
+}
+
+.content-table dl dd:hover {
+  color: hsl(var(--primary-clr-210));
 }
 
 .contents {
@@ -1030,7 +1101,12 @@ nav input[type="checkbox"] {
 }
 
 .contents *:not(h1) {
-  padding: 0 4rem 0 0;
+  padding: 0 3rem 0 0;
+}
+
+.contents hr {
+  margin-bottom: 30px;
+  border: solid 2px hsl(var(--primary-clr-120)) ;
 }
 
 .contents h1 {
@@ -1047,6 +1123,7 @@ nav input[type="checkbox"] {
   color: hsl(var(--primary-clr-110));
   margin-bottom: 20px;
   padding-left: 20px;
+  text-decoration: underline 2px hsl(var(--primary-clr-110));
 }
 
 .contents h3 {
@@ -1055,6 +1132,7 @@ nav input[type="checkbox"] {
   color: hsl(var(--primary-clr-100));
   padding-left: 30px;
   margin-bottom: 15px;
+  text-decoration: underline 2px hsl(var(--primary-clr-100));
 }
 
 .contents h3::first-letter {
