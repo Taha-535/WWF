@@ -25,10 +25,10 @@
       <input type="checkbox" name="hamburger" id="hamburger" />
       <img src="./assets/images/logo.png" alt="logo" />
       <div class="nav-elements">
-        <a target="_blank" href="#home">Home</a>
-        <a target="_blank" href="#aboutus">About Us</a>
-        <a target="_blank" href="./faq.html">FAQ</a>
-        <a target="_blank" href="#contact">Contact Us</a>
+        <a target="_self" href="index.html">Home</a>
+        <a target="_self" href="#aboutus">About Us</a>
+        <a target="_self" href="./faq.html">FAQ</a>
+        <a target="_self" href="#contact">Contact Us</a>
       </div>
       <div class="search">
         <form action="">
@@ -56,23 +56,6 @@
             one convenient platform, empowering you to make informed choices and
             embark on a healthier lifestyle.
           </p>
-          <div class="call-to-action">
-            <div class="contact">
-              <a target="_blank" href="">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a target="_blank" href="">
-                <i class="fa-brands fa-discord"></i>
-              </a>
-              <a target="_blank" href="">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-            <button>
-              <span> Join us </span>
-              <i class="fa-solid fa-circle-arrow-right"></i>
-            </button>
-          </div>
         </div>
 
         <img src="./assets/images/heart.png" alt="" />
@@ -238,18 +221,26 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="aboutus">
       <div class="foot-content">
         <div class="about-us">
-          <h2>About Us</h2>
-          <p>
-            SAWBI is a website dedicated towards providing information and
-            guidance regarding healthy nutrition habits. We know that many
-            people want to know more about these nourishing food options but
-            don’t really know where to start or who to turn to, our goal is to
-            help you by trying to make a variety of resources available to you
-            on one platform.
-          </p>
+          <div class="abtUs-txt">
+            <h2>About Us</h2>
+            <p>
+              SAWBI is a website dedicated towards providing information and
+              guidance regarding healthy nutrition habits. We know that many
+              people want to know more about these nourishing food options but
+              don’t really know where to start or who to turn to, our goal is to
+              help you by trying to make a variety of resources available to you
+              on one platform.
+            </p>
+          </div>
+          <div class="call-to-action">
+            <button>
+              <span> Join us </span>
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+          </div>
         </div>
         <div class="foot-img">
           <img src="./assets/images/earth.png" alt="logo" />
