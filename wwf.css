@@ -305,9 +305,11 @@ nav input[type="checkbox"] {
   flex-direction: column;
   gap: 5px;
   background-color: hsl(var(--primary-clr-210));
-  padding: 2rem 2.5rem 1.5rem;
+  padding: 2.5rem 3rem;
   transition: transform 0.7s;
-}
+  text-align: center;
+  width: 360px;
+} 
 
 .attractive:hover {
   transform: scale(1.1);
@@ -328,7 +330,6 @@ nav input[type="checkbox"] {
 
 .attractive p {
   font-size: .9rem;
-  width: 300px;
 }
 
 @media screen and (max-width: 800px) {
@@ -373,19 +374,6 @@ nav input[type="checkbox"] {
     font-size: calc(var(--fs-3) * var(--ls-ratio));
     width: calc(320px * var(--ls-ratio));
     margin-top: 3px;
-  }
-}
-
-.call-to-action {
-  --hov-transition: 0.5s;
-
-  margin-top: 15px;
-  width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  .call-to-action {
-    margin-top: 10px;
   }
 }
 
@@ -732,7 +720,7 @@ nav input[type="checkbox"] {
   aspect-ratio: 6 / 4;
   padding: 5.5rem;
   text-align: center;
-  border: 5px solid white;
+  border: 5px solid transparent;
   outline: 5px solid hsl(var(--primary-clr-200));
   transition: 0.4s;
 }
@@ -1217,7 +1205,7 @@ nav input[type="checkbox"] {
   display: flex; 
   flex-direction: column;
   gap: 15px;
-}
+} 
 
 @media screen and (max-width: 700px) {
   .about-us {
@@ -1245,6 +1233,32 @@ nav input[type="checkbox"] {
 @media screen and (max-width: 900px) {
   .about-us p {
     padding-right: 2px;
+  }
+}
+
+.call-to-action {
+  --hov-transition: 0.5s;
+
+  margin-top: 15px;
+  width: 100%;
+  padding-right: 140px;
+}
+
+@media screen and (max-width: 1100px) {
+  .call-to-action {
+    padding-right: 70px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .call-to-action {
+    padding-right: 2px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .call-to-action button {
+    margin-inline: auto;
   }
 }
 
